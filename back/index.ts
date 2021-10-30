@@ -4,7 +4,7 @@ const app = express();
 const PORT = 5000;
 
 app.get("/", (req, res) => {
-  res.send("here we go");
+  res.redirect("http://localhost:3000");
 });
 
 app.get("/api", (req, res) => {
