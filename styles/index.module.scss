@@ -1,0 +1,11 @@
+@use "colors" as *;
+
+.text {
+  color: get-light("text");
+  background: get-light("background");
+  margin: 0;
+  @include dark-mode {
+    color: get-dark("text");
+    background: get-dark("background");
+  }
+}

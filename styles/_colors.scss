@@ -1,0 +1,30 @@
+$colors-light: (
+  background: #f7f5fb,
+  text: #000000,
+  accent: #574ae2,
+);
+
+$colors-dark: (
+  background: #03012c,
+  text: #ffffff,
+  accent: #574ae2,
+);
+
+@function get-light($name) {
+  @return map-get($colors-light, $name);
+}
+
+@function get-dark($name) {
+  @return map-get($colors-dark, $name);
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) & {
+      @content;
+    }
+  }
+  :root[data-theme="dark"] & {
+    @content;
+  }
+}
