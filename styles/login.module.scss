@@ -22,7 +22,7 @@
       background-color: get-dark("login_prompt");
     }
     .header {
-      font-size: 1.2rem;
+      font-size: clamp(1.2rem, 8vw, 2.6rem);
       color: get-light("text");
 
       @include dark-mode {
@@ -30,7 +30,63 @@
       }
     }
 
-    .input {
+    .login_form {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+
+      .label {
+        color: get-light("text");
+        margin-right: auto;
+        margin-bottom: 0.2rem;
+        @include dark-mode {
+          color: get-dark("text");
+        }
+      }
+
+      .input {
+        width: 100%;
+        background-color: get-light("input-bg");
+        color: darken(get-light("text"), 2.5%);
+        padding: 0.6rem;
+        border-radius: 0.2rem;
+        margin-bottom: 1rem;
+        border: none;
+
+        &::placeholder {
+          opacity: 0.5;
+        }
+
+        @include dark-mode {
+          background-color: get-dark("input-bg");
+          color: darken(get-dark("text"), 2.5%);
+        }
+      }
+
+      .email_button {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        color: get-light("text");
+        background-color: get-light("input-bg");
+        border: none;
+        border-radius: 0.2rem;
+
+        @include dark-mode {
+          color: get-dark("text");
+          background-color: get-dark("input-bg");
+
+          &:hover {
+            background-color: darken(get-dark("input-bg"), 5%);
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: darken(get-light("input-bg"), 5%);
+        }
+      }
     }
   }
 }
