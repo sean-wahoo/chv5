@@ -4,6 +4,7 @@ $colors-light: (
   accent: #574ae2,
   login_prompt: #ffffff,
   input-bg: #f3f3f3,
+  line: #ffffff,
 );
 
 $colors-dark: (
@@ -12,6 +13,8 @@ $colors-dark: (
   accent: #574ae2,
   login_prompt: rgb(0, 0, 0),
   input-bg: #292929,
+  line: #464646,
+  dark-google-background: #4285f4,
 );
 
 @function get-light($name) {

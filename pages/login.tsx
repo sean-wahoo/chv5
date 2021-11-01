@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { NextPage } from "next";
 import { useState } from "react";
 import styles from "styles/login.module.scss";
 import {
@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import GoogleButton from "react-google-button";
 
 const googleSignIn = () => {
   const auth = getAuth();
@@ -101,7 +102,8 @@ const Login: NextPage = (props) => {
             Sign Up
           </button>
         </form>
-        <button onClick={() => googleSignIn()}>google</button>
+        <hr className={styles.line} />
+        <GoogleButton onClick={() => googleSignIn()} />
       </div>
     </main>
   );

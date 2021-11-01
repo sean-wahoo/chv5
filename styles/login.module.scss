@@ -1,4 +1,5 @@
 @use "colors" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .main {
   background-color: get-light("background");
@@ -48,12 +49,16 @@
 
       .input {
         width: 100%;
+        font-size: 1rem;
         background-color: get-light("input-bg");
         color: darken(get-light("text"), 2.5%);
         padding: 0.6rem;
         border-radius: 0.2rem;
         margin-bottom: 1rem;
         border: none;
+        &:focus {
+          background-color: get-light("input-bg");
+        }
 
         &::placeholder {
           opacity: 0.5;
@@ -62,6 +67,9 @@
         @include dark-mode {
           background-color: get-dark("input-bg");
           color: darken(get-dark("text"), 2.5%);
+          &:focus {
+            background-color: get-dark("input-bg");
+          }
         }
       }
 
@@ -86,6 +94,30 @@
           cursor: pointer;
           background-color: darken(get-light("input-bg"), 5%);
         }
+      }
+    }
+    .line {
+      border-color: get-light("line");
+      height: 1px;
+      margin: 1rem;
+
+      @include dark-mode {
+        border-color: get-dark("line");
+      }
+    }
+    .google_button {
+      display: flex;
+      flex-flow: row nowrap;
+      font-family: "Roboto";
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      color: get-light("text");
+      padding: 1.1rem;
+
+      @include dark-mode {
+        color: get-dark("text");
+        background-color: get-dark("dark-google-background");
       }
     }
   }
