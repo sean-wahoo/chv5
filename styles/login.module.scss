@@ -49,16 +49,22 @@
 
       .input {
         width: 100%;
+<<<<<<< HEAD
         font-size: 1rem;
+=======
+>>>>>>> 119a7a6 (temporarily updated login page)
         background-color: get-light("input-bg");
         color: darken(get-light("text"), 2.5%);
         padding: 0.6rem;
         border-radius: 0.2rem;
         margin-bottom: 1rem;
         border: none;
+<<<<<<< HEAD
         &:focus {
           background-color: get-light("input-bg");
         }
+=======
+>>>>>>> 119a7a6 (temporarily updated login page)
 
         &::placeholder {
           opacity: 0.5;
@@ -67,9 +73,12 @@
         @include dark-mode {
           background-color: get-dark("input-bg");
           color: darken(get-dark("text"), 2.5%);
+<<<<<<< HEAD
           &:focus {
             background-color: get-dark("input-bg");
           }
+=======
+>>>>>>> 119a7a6 (temporarily updated login page)
         }
       }
 
@@ -95,6 +104,7 @@
           background-color: darken(get-light("input-bg"), 5%);
         }
       }
+<<<<<<< HEAD
     }
     .line {
       border-color: get-light("line");
@@ -119,6 +129,8 @@
         color: get-dark("text");
         background-color: get-dark("dark-google-background");
       }
+=======
+>>>>>>> 119a7a6 (temporarily updated login page)
     }
   }
 }
