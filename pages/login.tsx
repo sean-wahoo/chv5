@@ -23,7 +23,7 @@ const googleSignIn = async () => {
     return { error: true, code, message };
   }
 
-  // test for gitting
+  // test for gittin\
 
   // const auth = getAuth();
   // const provider = new GoogleAuthProvider();
