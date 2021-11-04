@@ -1,1 +1,1 @@
-web: cd functions && npm run dev
+web: npm run dev
