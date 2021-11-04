@@ -10,7 +10,7 @@
     "watch": [
       "."
     ],
-    "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/index.ts",
+    "exec": "ts-node -r tsconfig-paths/register -r ts-node/register ./src/index.ts",
     "ext": "ts, js, json"
   },
   "scripts": {
@@ -19,7 +19,7 @@
     "api-test": "newman run chv5.postman_collection.json",
     "serve": "npm run build && firebase emulators:start --only functions",
     "shell": "npm run build && firebase functions:shell",
-    "start": "npm run shell",
+    "start": "node -r tsconfig-paths/register -r ts-node/register ./src/index.ts",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
