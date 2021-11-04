@@ -22,22 +22,6 @@ const googleSignIn = async () => {
     const message = error.message;
     return { error: true, code, message };
   }
-
-  // test for gitting yet again
-
-  // const auth = getAuth();
-  // const provider = new GoogleAuthProvider();
-  // signInWithPopup(auth, provider)
-  //   .then((result) => {
-  //     const credential = GoogleAuthProvider.credentialFromResult(result);
-
-  //   })
-  //   .catch((error) => {
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //     const email = error.email;
-  //     const credential = GoogleAuthProvider.credentialFromError(error);
-  //   });
 };
 
 const emailSignIn = async (email: string, password: string) => {
@@ -54,16 +38,6 @@ const emailSignIn = async (email: string, password: string) => {
     const message = error.message;
     return { error: true, code, message };
   }
-
-  // const auth = getAuth();
-  // createUserWithEmailAndPassword(auth, email, password)
-  //   .then((userCredential) => {
-  //     const user = userCredential.user;
-  //     console.log(user);
-  //   })
-  //   .catch((error) => {
-  //     console.table(error);
-  //   });
 };
 
 const Login: NextPage = () => {
@@ -98,7 +72,6 @@ const Login: NextPage = () => {
             id="password"
             name="password"
             onInput={(e) => {
-              e.preventDefault();
               setPassword(e.currentTarget.value);
             }}
             value={password}
@@ -113,16 +86,11 @@ const Login: NextPage = () => {
             id="confirmPassword"
             name="confirmPassword"
             onInput={(e) => {
-              e.preventDefault();
               setConfirmPassword(e.currentTarget.value);
             }}
             value={confirmPassword}
             placeholder="Super Secret Password Again"
           />
-          {/* /** you might be mixing some shit up so take a nap and figure this out
-          later. right now you are going pretty smoothly, just forgetting
-          whetehr or not you're working on registration or logging in and which
-          method. get that straightened out and you'll be on fire. */}
           <button
             className={styles.email_button}
             onClick={async (e) => {
@@ -133,8 +101,10 @@ const Login: NextPage = () => {
                 const image_path: string = signUpOnFirebase.photoURL;
                 const response = await axios.post(
                   `${process.env.BACKEND_URL}/auth/signUp`,
-                  { type: "email", display_name, image_path, email, password }
+                  { type: "email", display_name, image_path, email }
                 );
+
+                console.log(response);
               }
             }}
           >
